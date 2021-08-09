@@ -10,7 +10,7 @@
  * @param bool $recursive // add value in all targets of same level
  * @return void
  */
-function data_push(array &$array, string $keys, mixed $value, mixed $index = false, bool $recursive = false): void
+function data_push(array &$array, string $keys, mixed $value, mixed $index = [], bool $recursive = false): void
 {
     $parts = explode('.', $keys);
 
@@ -31,7 +31,7 @@ function data_push(array &$array, string $keys, mixed $value, mixed $index = fal
 
                 foreach ($subArrays as $subKey => $subValue) {
                     if (! count($parts)) {
-                        $array[$subKey][$index] = $value;
+                        $index ? $array[$subKey][$index] = $value : array_push($array[$subKey], $value);
                     } else {
                         data_push($array[$subKey], implode('.', $parts), value: $value, index: $index);
                     }
@@ -49,6 +49,5 @@ function data_push(array &$array, string $keys, mixed $value, mixed $index = fal
             continue;
         }
     }
-
-    $array[$index] = $value;
+    $index ? $array[$index] = $value : array_push($array, $value);
 }
