@@ -1,7 +1,7 @@
 <?php
 
 /**
- * create a new array inside array
+ * create a new array inside a array
  *
  * @param array $array
  * @param string $keys    // dot notation
