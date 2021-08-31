@@ -14,7 +14,7 @@ function data_push(array &$array, string $keys, mixed $value, mixed $index = [],
 {
     $parts = explode('.', $keys);
 
-    while (count($parts)) {
+    while ($keys && count($parts)) {
         $part = array_shift($parts);
 
         if (isset($array[$part]) && is_array($array[$part])) {
