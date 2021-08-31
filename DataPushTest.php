@@ -130,7 +130,7 @@ class DataPushTest extends TestCase
      * @test
      * @covers data_push
      */
-    public function it_should_throw_error_when_index_is_not_an_array(): void
+    public function it_should_throw_error_when_target_index_is_not_an_array(): void
     {
         $this->expectExceptionMessage('given key is not an array or the key does not exist');
         data_push($this->array, 'arr.a.a-1.a-2', 'value');

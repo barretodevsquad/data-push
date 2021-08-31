@@ -1,7 +1,7 @@
 <?php
 
 /**
- * create a new array inside array
+ * create a new array inside an array
  *
  * @param array $array
  * @param string $keys    // dot notation
@@ -10,7 +10,7 @@
  * @param bool $recursive // add value in all targets of same level
  * @return void
  */
-function data_push(array &$array, string $keys, mixed $value, mixed $index = [], bool $recursive = false): void
+function data_push(array &$array, string $keys, mixed $value, mixed $index = false, bool $recursive = false): void
 {
     $parts = explode('.', $keys);
 
