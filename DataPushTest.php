@@ -56,7 +56,7 @@ class DataPushTest extends TestCase
      * @test
      * @covers data_push
      */
-    public function it_should_add_new_array_inside_unknow_array_index(): void
+    public function it_should_add_new_array_inside_unknown_array_index(): void
     {
         $expectedArray = $this->array;
 
@@ -75,7 +75,7 @@ class DataPushTest extends TestCase
      * @test
      * @covers data_push
      */
-    public function it_should_add_new_array_inside_unknow_array_index_recursivelly(): void
+    public function it_should_add_new_array_inside_unknown_array_index_recursively(): void
     {
         $expectedArray = $this->array;
         array_push($expectedArray['arr']['a']['a-1'], 'c');
@@ -90,7 +90,7 @@ class DataPushTest extends TestCase
      * @test
      * @covers data_push
      */
-    public function it_should_add_new_array_inside_unknow_array_index_with_custom_index_recursivelly(): void
+    public function it_should_add_new_array_inside_unknown_array_index_with_custom_index_recursively(): void
     {
         $expectedArray = $this->array;
 
@@ -106,7 +106,7 @@ class DataPushTest extends TestCase
      * @test
      * @covers data_push
      */
-    public function it_should_be_able_to_walk_through_unknow_indexes(): void
+    public function it_should_be_able_to_walk_through_unknown_indexes(): void
     {
         $expectedArray = $this->array;
         array_push($expectedArray['arr']['a']['a-1'], 'a-2-1');
@@ -123,7 +123,7 @@ class DataPushTest extends TestCase
     public function it_should_throw_error_when_index_does_not_exists(): void
     {
         $this->expectExceptionMessage('given key is not an array or the key does not exist');
-        data_push($this->array, 'this_key_doesnt_exists', 'value');
+        data_push($this->array, 'this_key_does_not_exists', 'value');
     }
 
     /**
